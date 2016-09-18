@@ -51,7 +51,7 @@ Looking at the model `PersonalInfo` you will see that both the email and SSN are
     @Convert(converter = EncryptionAttributeConverter.class)
     private String email;
 ```
-This indicates that the `EncryptionAttributeConverter` class to be called any time those attributes are read or written
+This indicates that the `EncryptionAttributeConverter` class should be called any time those attributes are read or written
 via JPA.
 
 If we create a new `PersonalInfo` instance as mentioned in the quick start guide you would see something like the
