@@ -3,6 +3,8 @@ package com.plumstep.repository;
 import com.plumstep.model.PersonalInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: joutwate
@@ -11,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * To change this template use File | Settings | File Templates.
  */
 public interface PersonalInfoRepository extends JpaRepository<PersonalInfo, Long> {
-    PersonalInfo findBySsn(String ssn);
+    List<PersonalInfo> findBySsn(String ssn);
 }

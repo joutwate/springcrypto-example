@@ -59,6 +59,5 @@ public class SpringEncryptionApplication extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/").permitAll().and()
                 .authorizeRequests().antMatchers("/console/**").permitAll();
         http.headers().frameOptions().sameOrigin();
-
     }
 }

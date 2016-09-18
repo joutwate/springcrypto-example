@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: joutwate
@@ -39,7 +41,7 @@ public class PersonalInfoController {
 
     @ApiOperation(value = "Retrieve personal information identified by ssn")
     @RequestMapping(value = "/ssn/{ssn}", method = RequestMethod.GET)
-    ResponseEntity<PersonalInfo> getPI(@PathVariable String ssn) {
+    ResponseEntity<List<PersonalInfo>> getPI(@PathVariable String ssn) {
         return ResponseEntity.ok(repository.findBySsn(ssn));
     }
 }

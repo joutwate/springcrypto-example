@@ -13,15 +13,17 @@ import javax.persistence.Converter;
 public class EncryptionAttributeConverter implements AttributeConverter<String, String> {
     @Override
     public String convertToDatabaseColumn(String attribute) {
-        System.out.println("attribute = [" + attribute + "]");
         TextEncryptor encryptor = SpringApplicationContext.getBean(TextEncryptor.class);
-        return encryptor.encrypt(attribute);
+        String result = encryptor.encrypt(attribute);
+        System.out.println("encrypting = [" + attribute + "] -> [" + result + "]");
+        return result;
     }
 
     @Override
     public String convertToEntityAttribute(String dbData) {
-        System.out.println("dbData = [" + dbData + "]");
         TextEncryptor encryptor = SpringApplicationContext.getBean(TextEncryptor.class);
-        return encryptor.decrypt(dbData);
+        String result = encryptor.decrypt(dbData);
+        System.out.println("decrypting = [" + dbData + "] -> [" + result + "]");
+        return result;
     }
 }
