@@ -28,10 +28,11 @@ where email and SSN are both encrypted strings
 
 ##Summary
 
-This demo contains a SpringBoot application that utilizes Spring Security for application level encryption
-using AES 256 with 1024 iterations.
+This demo contains a SpringBoot application that utilizes Spring Security to implement application level encryption
+using AES 256 with 1024 iterations.  The code to create the encryptor is in `SpringEncryptionApplication` and exposed
+as a bean, see `textEncryptor()`, that is used by the application to encrypt and decrypt data.
 
-When you bring up the service a salt and password will be generated for the run and printed to the
+A bean When you bring up the service a salt and password will be generated for the run and printed to the
 console.
 ```
 Generated salt = 611632d2d3088b20
@@ -61,7 +62,7 @@ encrypting = [test@test.com] -> [4e86ff25feaf958633b31eb1c075d306]
 encrypting = [111111111] -> [efbca6b5a652f35226a7f9b7a707c104]
 ```
 This output shows how the converter is being called on our annotated fields resulting
-in both the email and ssn being encrypted.
+in both the email and SSN being encrypted.
 
 Follow this up by retrieving the `PersonalInfo` instance we created by SSN
 ```
